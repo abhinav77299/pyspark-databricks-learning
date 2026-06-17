@@ -1,46 +1,66 @@
 # PySpark Databricks Learning
 
-Step-by-step PySpark learning using the BigMart Sales dataset on Databricks.
+PySpark fundamentals on Databricks using the BigMart Sales dataset.
 
-This is an active learning repository — updated as I progress through new topics.
+This is an active learning repo — updated as I cover new topics.
 
-## What's Covered (as of June 2026)
+---
 
-- **Data Ingestion** — Reading CSV and JSON files into Spark DataFrames
-- **Schema Definition** — Inferred schema, DDL string schema, StructType explicit schema
-- **Column Operations** — select(), alias(), withColumnRenamed(), withColumn(), lit()
-- **Filtering** — Single conditions, AND/OR logic, isNull(), isin()
-- **String Manipulation** — regexp_replace() for data standardization
-- **Type Casting** — Casting between StringType, DoubleType, IntegerType
-- **Sorting** — sort() and orderBy() in ascending and descending order
-- **GroupBy & Aggregations** — groupBy() with count(), sum(), avg(), min(), max()
+## Topics Covered
+
+### Data Ingestion
+- Reading JSON files with `spark.read.json()`
+- Reading CSV files with `spark.read.csv()` using `inferSchema` and `header` options
+- Exploring files with `dbutils.fs.ls()`
+
+### Schema Definition
+- Inferred schema via `inferSchema=True`
+- Explicit DDL string schema
+
+### DataFrame Operations
+- `select()` with `col()`
+- `alias()` for column renaming within select
+- `withColumnRenamed()` to rename existing columns
+- `display()` and `printSchema()` for inspection
+
+### Filtering
+- Single condition: `col == value`
+- Multiple conditions with `&` (AND) and `|` (OR)
+- Null checks with `isNull()`
+
+### Column Transformations
+- `withColumn()` to add new columns
+- `lit()` for literal/constant values
+- Arithmetic operations between columns
+- Type casting with `.cast("double")`
+
+---
 
 ## In Progress / Coming Next
 
-- Joins (inner, left, right, outer)
+- regexp_replace() for string standardization
+- sort() and orderBy()
+- GroupBy and aggregations
+- Joins
 - Window Functions
 - Spark SQL
-- Delta Lake basics
+
+---
 
 ## Dataset
 
-BigMart Sales dataset — retail transaction data with product and outlet information.
-Source: [Analytics Vidhya BigMart Sales](https://datahack.analyticsvidhya.com/contest/practice-problem-bigmart-sales-prediction/)
+BigMart Sales — retail transaction data with product and outlet information.
 
-Data files are not included in this repo due to size. Download from the source above and place in the `data/` folder.
+Download: [Analytics Vidhya BigMart Sales](https://datahack.analyticsvidhya.com/contest/practice-problem-bigmart-sales-prediction/)
+
+Upload to Databricks at: `/Volumes/dbacademy/default/tutorials/`
 
 ## Environment
 
-- Apache PySpark
-- Databricks (Community Edition compatible)
+- PySpark on Databricks
 - Python 3.x
-
-## How to Use
-
-1. Download the dataset and upload to Databricks DBFS at `/FileStore/tables/`
-2. Import the notebook from the `notebooks/` folder into your Databricks workspace
-3. Run cells sequentially
+- Unity Catalog (Volumes-based file path)
 
 ## Status
 
-🟡 In progress — actively adding new topics
+🟡 Work in progress
