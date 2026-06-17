@@ -36,15 +36,6 @@ This is an active learning repo — updated as I cover new topics.
 
 ---
 
-## In Progress / Coming Next
-
-- regexp_replace() for string standardization
-- sort() and orderBy()
-- GroupBy and aggregations
-- Joins
-- Window Functions
-- Spark SQL
-
 ---
 
 ## Dataset
